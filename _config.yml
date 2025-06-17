@@ -10,12 +10,15 @@ description: >-
 baseurl: ""                # leave blank for username.github.io
 url: "https://ucchwas09.github.io"
 
-theme: minimal-mistakes-jekyll
+# Pull the Minimal Mistakes theme from GitHub
+remote_theme: "mmistakes/minimal-mistakes"
 
-# Plugins
+# Ensure Jekyll loads the remote-theme plugin
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+
 
 # Which files become “pages” in the top nav
 header_pages:
