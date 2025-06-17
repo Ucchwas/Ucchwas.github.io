@@ -1,26 +1,21 @@
-# Site settings
 title: "Ucchwas Talukder"
 name: "Ucchwas Talukder"
 email: "ucchwas09@gmail.com"
 description: >-
-  PhD Candidate, Texas Tech University. Real-time health monitoring, wearable devices,
-  and AI for healthcare.
+  PhD Candidate, Texas Tech University. Real-time health monitoring, wearable devices, and AI for healthcare.
 
-# URL settings (GitHub Pages)
-baseurl: ""                # leave blank for username.github.io
-url: "https://ucchwas09.github.io"
+# GitHub Pages settings
+baseurl: ""                      # Leave blank for username.github.io
+url: "https://ucchwas.github.io" # Use the correct username!
 
-# Pull the Minimal Mistakes theme from GitHub
 remote_theme: "mmistakes/minimal-mistakes"
 
-# Ensure Jekyll loads the remote-theme plugin
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
-
-# Which files become “pages” in the top nav
+# Navigation
 header_pages:
   - index.md
   - about.md
@@ -32,18 +27,18 @@ header_pages:
 defaults:
   -
     scope:
-      path: ""     # all files
+      path: ""
       type: "pages"
     values:
       layout: single
       author_profile: false
 
-# Custom navigation (footer & social)
+# Footer social links
 footer:
   social:
     - title: "GitHub"
-      url: https://github.com/Ucchwas
+      url: "https://github.com/Ucchwas"
     - title: "LinkedIn"
-      url: https://www.linkedin.com/in/ucchwas-talukder-utsha-98024518b/
+      url: "https://www.linkedin.com/in/ucchwas-talukder-utsha-98024518b/"
     - title: "Google Scholar"
-      url: https://scholar.google.com/citations?user=5d2l7uQAAAAJ
+      url: "https://scholar.google.com/citations?user=5d2l7uQAAAAJ"
