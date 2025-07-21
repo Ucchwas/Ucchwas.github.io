@@ -1,15 +1,16 @@
 source "https://rubygems.org"
-
-# Use GitHub Pages’ jekyll + supported plugins
 gem "github-pages", group: :jekyll_plugins
 
 group :jekyll_plugins do
-  gem "jekyll-feed"
+  gem "jekyll-paginate"
   gem "jekyll-sitemap"
+  gem "jekyll-gist"
+  gem "jekyll-feed"
+  gem "jemoji"
   gem "jekyll-include-cache"
 end
 
-# Windows‑only timezone data (optional)
+# Windows-specific gems
 platforms :mswin, :mingw, :x64_mingw do
   gem "tzinfo-data"
 end

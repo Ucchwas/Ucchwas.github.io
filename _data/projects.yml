@@ -1,9 +1,15 @@
-- name: "Smart Health App"
-  tools: "Android, Java, TensorFlow Lite"
-  description: "Smartphone app for beat‑by‑beat ECG & respiration analysis."
-  repo: "https://github.com/Ucchwas/SmartHealthApp"
+- title: "Real‑Time ECG & Respiration Monitoring"
+  description: >
+    Developed a low‑power, inkjet‑printed wearable system that runs
+    on‑device ECG & respiratory analysis using edge‑AI.
+  url: "https://github.com/Ucchwas/ecg-resp-wearable"
+  tags: ["IoT", "Edge‑AI", "Sensors"]
 
-- name: "Edge‑AI Wearable Sensor"
-  tools: "C, ARM Cortex‑M, FreeRTOS"
-  description: "Ultra‑low‑power firmware for real‑time signal processing."
-  repo: ""
+- title: "Adversarial‑Robust Health AI"
+  description: >
+    Designed and evaluated defenses against adversarial attacks in
+    wearable health‑monitoring neural networks.
+  url: "https://github.com/Ucchwas/adversarial-health-ai"
+  tags: ["Security", "Machine Learning"]
+
+# …and so on for each of your projects

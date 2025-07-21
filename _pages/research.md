@@ -4,14 +4,13 @@ title: Research
 permalink: /research/
 ---
 
-Healthcare monitoring is often reactive…  
-⟨Intro paragraph from your research statement⟩
+I’m building ultra‑low‑power, inkjet‑printed wearable sensors and edge‑AI pipelines for **real‑time health monitoring**—focusing on:
 
-### Edge‑AI on Resource‑Constrained Devices  
-⟨Bullet / paragraph from your statement about on‑device inference⟩
+1. **ECG & Respiratory Analysis**  
+   On‑device algorithms for beat detection and respiration monitoring with flexible electrodes.
 
-### Ultra‑Low‑Power Sensing Hardware  
-⟨Bullet about novel hardware you developed⟩
+2. **Adversarial‑Robust AI**  
+   Defenses to ensure reliable health analytics in adversarial environments.
 
-### Future Directions  
-⟨Your 2–3 lines on long‑term vision⟩
+3. **Wearable IoT Systems**  
+   End‑to‑end sensor hardware, firmware, and cloud integration for continuous patient monitoring.

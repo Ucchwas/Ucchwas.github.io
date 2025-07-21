@@ -1,12 +1,15 @@
+/* 1) Import the Minimal Mistakes “main” stylesheet */
 @import "minimal-mistakes/assets/main";
 
+/* 2) Override your brand colours */
 :root {
-  --color-primary:   #006d77;
-  --color-secondary: #83c5be;
-  --color-accent:    #edf6f9;
-  --color-bg-light:  #faf9f9;
-  --color-text-dark: #0a0908;
+  --color-primary:   #006d77;  /* your link / accent colour */
+  --color-secondary: #83c5be;  /* header background, buttons, etc */
+  --color-accent:    #edf6f9;  /* highlight backgrounds */
+  --color-bg-light:  #faf9f9;  /* page background */
+  --color-text-dark: #0a0908;  /* main text */
 }
 
+/* 3) Map a few Sass variables to those CSS vars */
 $body-bg:   var(--color-bg-light);
 $color-link: var(--color-primary);

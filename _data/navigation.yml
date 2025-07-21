@@ -1,14 +1,13 @@
-# _data/navigation.yml
 main:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Research
-    url: /research/
-  - title: Publications
-    url: /publications/
-  - title: Projects
-    url: /projects/
-  - title: Achievements
-    url: /achievements/
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Achievements"
+    url: "/achievements/"

@@ -4,13 +4,19 @@ title: Publications
 permalink: /publications/
 ---
 
-<ul class="collection-list">
-{% for p in site.data.publications %}
-<li>
-  <strong>{{ p.title }}</strong>  
-  {% if p.journal %}<em>{{ p.journal }}</em>{% endif %}  
-  <small>{{ p.date }}</small>  
-  {% if p.url %}[DOI]({{ p.url }}){% endif %}
-</li>
-{% endfor %}
+A selection of my peer‐reviewed publications:
+
+<ul class="publication-list">
+{%- for p in site.data.publications -%}
+  <li>
+    <p>
+      **{{ p.title }}**  
+      _{{ p.journal }}_  
+      {% if p.authors %}— {{ p.authors }}{% endif %}
+      {%- if p.url -%}
+        • [PDF]({{ p.url }})
+      {%- endif -%}
+    </p>
+  </li>
+{%- endfor -%}
 </ul>

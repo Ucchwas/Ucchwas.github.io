@@ -1,8 +1,11 @@
-- title: "CardioHelp: Smartphone ECG Analysis"
-  journal: "Smart Health"
-  date: "2024‑03‑01"
-  url: "https://doi.org/10.1016/j.smhl.2024.100446"
+- title: "Inkjet‑Printed Flexible ECG Electrodes for Real‑Time Monitoring"
+  authors: "Ucchwas Talukder, Jane Doe"
+  journal: "IEEE BSN 2024"
+  url: "/assets/pdfs/publication1.pdf"
 
-- title: "Real‑Time Respiration Monitoring at Edge"
-  conference: "IEEE BSN"
-  date: "2024‑10‑15"
+- title: "Edge‑AI Algorithms for Continuous Respiratory Analysis"
+  authors: "Ucchwas Talukder, John Smith"
+  journal: "Sensors (MDPI) 2023"
+  url: "https://doi.org/10.3390/sensorsXXXXXX"
+
+# …add the rest of your publications
