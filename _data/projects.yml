@@ -1,0 +1,9 @@
+- name: "Smart Health App"
+  tools: "Android, Java, TensorFlow Lite"
+  description: "Smartphone app for beat‑by‑beat ECG & respiration analysis."
+  repo: "https://github.com/Ucchwas/SmartHealthApp"
+
+- name: "Edge‑AI Wearable Sensor"
+  tools: "C, ARM Cortex‑M, FreeRTOS"
+  description: "Ultra‑low‑power firmware for real‑time signal processing."
+  repo: ""

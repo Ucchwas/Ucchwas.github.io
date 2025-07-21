@@ -1,0 +1,12 @@
+@import "minimal-mistakes/assets/main";
+
+:root {
+  --color-primary:   #006d77;
+  --color-secondary: #83c5be;
+  --color-accent:    #edf6f9;
+  --color-bg-light:  #faf9f9;
+  --color-text-dark: #0a0908;
+}
+
+$body-bg:   var(--color-bg-light);
+$color-link: var(--color-primary);
