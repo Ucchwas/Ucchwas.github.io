@@ -1,22 +1,75 @@
-title: "Ucchwas Talukder"
-description: "PhD candidate in Computer Science, working on real-time health monitoring solutions"
-minimal_mistakes_skin: "default"
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+title:        "Ucchwas Talukder Utsha"
+description:  "PhD candidate in Computer Science at Texas Tech University—real‑time health‑monitoring & edge‑AI."
+# your live URL; leave `baseurl` blank for username.github.io
+url:          "https://ucchwas.github.io"
+baseurl:      ""
+
+# -----------------------------------------------------------------------------
+# Theme & plugins
+# -----------------------------------------------------------------------------
 remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-include-cache
   - jemoji
   - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
 
+
+# -----------------------------------------------------------------------------
+# Include & defaults
+# -----------------------------------------------------------------------------
 include:
-  - "_pages"
+  - "_pages"       # so your pages folder gets picked up
+  - "assets/images"
+  - "assets/pdfs"
 
 defaults:
+  # all pages in _pages/ use the “single” layout with sidebar
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: single
       author_profile: true
+
+# -----------------------------------------------------------------------------
+# Author / sidebar info
+# -----------------------------------------------------------------------------
+author:
+  name:   "Ucchwas Talukder"
+  avatar: "/assets/images/Ucc.jpg"    # your portrait
+  bio:    "Real‑time health‑monitoring solutions via embedded IoT & edge‑AI."
+  links:
+    - label: "Email"
+      icon:  "fas fa-fw fa-envelope"
+      url:   "mailto:ucchwas09@gmail.com"
+    - label: "GitHub"
+      icon:  "fab fa-fw fa-github"
+      url:   "https://github.com/Ucchwas"
+    - label: "LinkedIn"
+      icon:  "fab fa-fw fa-linkedin"
+      url:   "https://www.linkedin.com/in/ucchwas-talukder-utsha-98024518b/"
+    - label: "Google Scholar"
+      icon:  "fas fa-fw fa-graduation-cap"
+      url:   "https://scholar.google.com/citations?user=5d2l7uQAAAAJ"
+
+# -----------------------------------------------------------------------------
+# Markdown & permalinks
+# -----------------------------------------------------------------------------
+markdown: kramdown
+permalink: /:title/
+paginate:  5
+paginate_path: "/page:num/"
+
+# -----------------------------------------------------------------------------
+# SASS & CSS
+# -----------------------------------------------------------------------------
+sass:
+  style: compressed

@@ -1,15 +1,41 @@
-/* 1) Import the Minimal Mistakes “main” stylesheet */
+// 1) Import the core Minimal Mistakes styles
 @import "minimal-mistakes/assets/main";
 
-/* 2) Override your brand colours */
-:root {
-  --color-primary:   #006d77;  /* your link / accent colour */
-  --color-secondary: #83c5be;  /* header background, buttons, etc */
-  --color-accent:    #edf6f9;  /* highlight backgrounds */
-  --color-bg-light:  #faf9f9;  /* page background */
-  --color-text-dark: #0a0908;  /* main text */
+// 2) Set global font (affects body, navigation, sidebar, headings, etc.)
+body, .page, .page__content, .sidebar, .site-footer, .masthead, .masthead__menu-item, .author__name, .author__bio, .author__avatar, .author__content,
+h1, h2, h3, h4, h5, h6, p, li, blockquote, .nav__list {
+  font-family: "Times New Roman", Times, serif !important;
 }
 
-/* 3) Map a few Sass variables to those CSS vars */
-$body-bg:   var(--color-bg-light);
+// 3) Font sizes and line heights
+h1, .page-header__title      { font-size: 2.25rem; }
+h2                          { font-size: 1.75rem; }
+h3                          { font-size: 1.5rem;  }
+p, li, blockquote           { font-size: 1rem; line-height: 1.7; }
+
+// 4) Make sidebar and nav links slightly smaller (optional, matches academic look)
+.sidebar a, .masthead__menu-item {
+  font-size: 1rem;
+}
+
+// 5) Bolding utility classes (for markdown .bold)
+.bold { font-weight: 700; }
+
+// 6) Brand colours
+:root {
+  --color-primary:   #006d77;
+  --color-secondary: #83c5be;
+  --color-accent:    #edf6f9;
+  --color-bg-light:  #faf9f9;
+  --color-text-dark: #0a0908;
+}
+$body-bg:    var(--color-bg-light);
 $color-link: var(--color-primary);
+
+// 7) Extra: Add subtle border to sidebar/profile (for a cleaner academic touch)
+.sidebar, .author__content {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 18px 12px;
+  background: #fcfcfc;
+}
