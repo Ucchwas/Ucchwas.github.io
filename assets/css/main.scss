@@ -1,25 +1,28 @@
-// 1) Import the core Minimal Mistakes styles
+// 1) Import Minimal Mistakes core styles first!
+$content-max-width: 1200px !default;
+$sidebar-max-width: 350px !default;
+
 @import "minimal-mistakes/assets/main";
 
-// 2) Set global font (affects body, navigation, sidebar, headings, etc.)
+// 2) Global Times New Roman everywhere, including .layout--home and .page__content
 body, .page, .page__content, .sidebar, .site-footer, .masthead, .masthead__menu-item, .author__name, .author__bio, .author__avatar, .author__content,
-h1, h2, h3, h4, h5, h6, p, li, blockquote, .nav__list {
+h1, h2, h3, h4, h5, h6, p, li, blockquote, .nav__list, .archive__item-title, .archive__item-excerpt {
   font-family: "Times New Roman", Times, serif !important;
 }
 
-// 3) Font sizes and line heights
+// 3) Font sizes
 h1, .page-header__title      { font-size: 2.25rem; }
 h2                          { font-size: 1.75rem; }
 h3                          { font-size: 1.5rem;  }
 p, li, blockquote           { font-size: 1rem; line-height: 1.7; }
 
-// 4) Make sidebar and nav links slightly smaller (optional, matches academic look)
+// 4) Sidebar/nav links
 .sidebar a, .masthead__menu-item {
   font-size: 1rem;
 }
 
-// 5) Bolding utility classes (for markdown .bold)
-.bold { font-weight: 700; }
+// 5) Bolding utility class (for markdown use)
+.bold { font-weight: 700 !important; }
 
 // 6) Brand colours
 :root {
@@ -32,10 +35,19 @@ p, li, blockquote           { font-size: 1rem; line-height: 1.7; }
 $body-bg:    var(--color-bg-light);
 $color-link: var(--color-primary);
 
-// 7) Extra: Add subtle border to sidebar/profile (for a cleaner academic touch)
+// 7) Sidebar/profile box styling for academic touch
 .sidebar, .author__content {
   border: 1px solid #eee;
   border-radius: 6px;
   padding: 18px 12px;
   background: #fcfcfc;
+}
+
+// 8) Make homepage wider (only for layout: home, optional)
+.page, .page__content, .layout--home, .home-intro {
+  max-width: 2000px !important;  // (increase if needed)
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 32px !important;   // was 60px+
+  padding-right: 32px !important;
 }

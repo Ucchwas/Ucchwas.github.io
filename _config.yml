@@ -43,9 +43,9 @@ defaults:
 # Author / sidebar info
 # -----------------------------------------------------------------------------
 author:
-  name:   "Ucchwas Talukder"
-  avatar: "/assets/images/Ucc.jpg"    # your portrait
-  bio:    "Real‑time health‑monitoring solutions via embedded IoT & edge‑AI."
+  name:   "Ucchwas Talukder Utsha"
+  avatar: "/assets/images/Ucc.jpg"   
+  bio: "Advancing real-time medical care with embedded IoT, Cyber-Physical Systems, and edge-AI-driven machine learning."
   links:
     - label: "Email"
       icon:  "fas fa-fw fa-envelope"
@@ -73,3 +73,6 @@ paginate_path: "/page:num/"
 # -----------------------------------------------------------------------------
 sass:
   style: compressed
+  load_paths:
+    - assets/css
+
