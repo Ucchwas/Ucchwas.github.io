@@ -50,7 +50,7 @@ Driven by a passion for transformative healthcare, I build robust, energy-effici
 ---
 
 ### 📄 
-- [Resume](/assets/pdfs/Ucchwas_Resume_2P.pdf) · [Research Statement](/assets/pdfs/Research_Statement_Ucchwas.pdf)
+- [Resume](/assets/pdfs/Ucchwas_Talukder.pdf) · [Research Statement](/assets/pdfs/Research_Statement_Ucchwas.pdf)
 
 ---
 
