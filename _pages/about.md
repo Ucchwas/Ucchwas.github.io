@@ -6,7 +6,10 @@ permalink: /about/
 
 ## Biography
 
-⟨Paste your 2‑3 sentence bio from your résumé / research statement⟩
+Innovative Ph.D. candidate with deep expertise in machine learning, AI integration, and real-time health monitoring. Proven 
+track record developing and deploying state-of-the-art ML solutions with edge-computing capabilities. Experienced in working 
+cross-functionally in fast-paced environments, delivering high-impact, production-ready solutions. Passionate about bridging 
+advanced AI research with practical, scalable applications. 
 
 ## Education
 
