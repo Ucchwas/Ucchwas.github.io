@@ -28,8 +28,8 @@ permalink: /achievements/
 
 ### 🧩 **Other Interests & Skills**
 
-- Skilled in **public speaking**—presented research at international conferences and university seminars.
-- **Science communicator**—enjoy translating complex technical concepts into clear, accessible ideas for diverse audiences.
+- Skilled in **public speaking**, with presentations delivered at international conferences and academic events.
+- Enthusiastic **science communicator**, skilled at making complex research accessible to broad audiences.
 - Advocate for **tech-driven healthcare innovation**, with a strong belief in building **real-world solutions** that make a positive impact on people’s lives.
 - Lifelong learner, passionate about emerging trends in **AI, IoT, and wearable technology**.
 
@@ -38,5 +38,10 @@ permalink: /achievements/
 <style>
 body, p, li, h1, h2, h3, h4, h5, h6 {
   font-family: 'Times New Roman', Times, serif !important;
+}
+.sidebar, .author__content {
+  filter: none !important;
+  opacity: 1 !important;
+  transition: none !important;
 }
 </style>

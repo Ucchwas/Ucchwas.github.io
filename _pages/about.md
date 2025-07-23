@@ -10,11 +10,23 @@ permalink: /about/
 
 ## Education
 
-- **Texas Tech University**, PhD in Computer Science (expected 2026)  
-- **BUET**, BSc in CSE, First Class with High Honors, 2021  
+- **Texas Tech University**, PhD in Computer Science (expected December, 2025)  
+- **BUET**, BSc in CSE, 2021  
 
 ## Skills
 
 - **Programming:** C/C++, Python, Java, JavaScript  
 - **Frameworks:** TensorFlow, PyTorch, Django, Node.js  
 - **Tools:** Git, Docker, AWS, MATLAB  
+
+
+<style>
+body, p, li, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+.sidebar, .author__content {
+  filter: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+</style>

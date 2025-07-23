@@ -1,11 +1,44 @@
-- title: "Inkjet‑Printed Flexible ECG Electrodes for Real‑Time Monitoring"
-  authors: "Ucchwas Talukder, Jane Doe"
-  journal: "IEEE BSN 2024"
-  url: "/assets/pdfs/publication1.pdf"
+- title: "GAN-Enhanced Hybrid Deep Learning Model for Real-Time Cardiac Beat Detection in the CardioHelp App with Edge Computing"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "Smart Health (Revision), 2025"
 
-- title: "Edge‑AI Algorithms for Continuous Respiratory Analysis"
-  authors: "Ucchwas Talukder, John Smith"
-  journal: "Sensors (MDPI) 2023"
-  url: "https://doi.org/10.3390/sensorsXXXXXX"
+- title: "CardioHelp: A smartphone application for beat-by-beat ECG signal analysis for real-time cardiac disease detection using edge-computing AI classifiers"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "Smart Health, 31, 100446, 2024"
+  url: "https://doi.org/10.1016/j.smhl.2024.100446"
 
-# …add the rest of your publications
+- title: "Physiological Stress Monitoring with Chest-Worn ECG and Respiratory Sensing"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE 21st Int'l Conf. on Body Sensor Networks (BSN), 2025 (Submitted)"
+
+- title: "Smartphone-Based Real-Time Respiration Tracking with Dual-Sided Inkjet-Printed Wearable Electrodes"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE 21st Int'l Conf. on Body Sensor Networks (BSN), 2025 (Submitted)"
+
+- title: "Multi-Stage Real-Time Classification of Breathing Patterns Using ECG and Respiratory Signals"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE 6th World AI IoT Congress, 2025"
+
+- title: "Securing AI-Driven ECG Classification with Robust Defense Against Boundary Attacks"
+  authors: "Ucchwas T. Utsha, T. Salman, B. I. Morshed"
+  journal: "IEEE Conf. on Secure and Trustworthy CyberInfrastructure for IoT and Microelectronics (SaTC), 2025"
+
+- title: "Edge-Computing Enabled Real-Time Respiratory Monitoring and Breathing Pattern Detection"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE 20th Int'l Conf. on Body Sensor Networks (BSN), 2024"
+
+- title: "A Smartphone App for Real-time Heart Rate Computation from Streaming ECG/EKG data"
+  authors: "Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE Int'l Conf. on Electro Information Technology (eIT), 2023"
+  url: "https://doi.org/10.1109/eIT57321.2023.10187337"
+
+- title: "A Smart Health Application for Real-Time Cardiac Disease Detection and Diagnosis Using Machine Learning on ECG Data"
+  authors: "Ucchwas T. Utsha, I. Hua Tsai, B. I. Morshed"
+  journal: "IFIPIoT 2023, Advances in Info & Communication Tech, vol 683. Springer, Cham"
+  url: "https://doi.org/10.1007/978-3-031-45878-1_10"
+
+- title: "Inkjet-printed Dry Flexible Electromyography Electrode Array for Classifying Various Finger Movements with AI Algorithms"
+  authors: "Nabonita Mitra, Ucchwas T. Utsha, B. I. Morshed"
+  journal: "IEEE UEMCON, 2024"
+
+
