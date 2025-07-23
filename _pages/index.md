@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: single
 title: "Welcome"
 permalink: /
 ---
@@ -47,28 +47,21 @@ Driven by a passion for transformative healthcare, I build robust, energy-effici
 
 *Explore more*: [See Achievements](/achievements/)
 
+---
+
+### 📄 
+- [Resume](/assets/pdfs/Ucchwas_Resume_2P.pdf) · [Research Statement](/assets/pdfs/Research_Statement_Ucchwas.pdf)
 
 ---
 
-### 📄 [Resume](/assets/pdfs/Ucchwas_Resume_2P.pdf) · 📄 [Research Statement](/assets/pdfs/Research_Statement_Ucchwas.pdf)
-### ✉️ [ucchwas09@gmail.com](mailto:ucchwas09@gmail.com) / [uutsha@ttu.edu](mailto:uutsha@ttu.edu)
+### ✉️ 
+- [ucchwas09@gmail.com](mailto:ucchwas09@gmail.com) / [uutsha@ttu.edu](mailto:uutsha@ttu.edu)
+
+
 ---
 
 ### 🔗 **Stay Connected**
 
-<!-- - [GitHub](https://github.com/Ucchwas)  
-- [LinkedIn](https://www.linkedin.com/in/ucchwas-talukder/)  
-- [Google Scholar](https://scholar.google.com/)   -->
-
 ---
 
-<style>
-body, p, li, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Times New Roman', Times, serif !important;
-}
-.sidebar, .author__content {
-  filter: none !important;
-  opacity: 1 !important;
-  transition: none !important;
-}
-</style>
+

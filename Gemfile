@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jemoji"
   gem "jekyll-include-cache"
+  gem "minimal-mistakes-jekyll"
 end
 
 # Windows-specific gems

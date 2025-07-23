@@ -1,8 +1,7 @@
-// 1) Import Minimal Mistakes core styles first!
-$content-max-width: 1200px !default;
-$sidebar-max-width: 350px !default;
+---
+---
 
-@import "minimal-mistakes/assets/main";
+@import "minimal-mistakes";
 
 // 2) Global Times New Roman everywhere, including .layout--home and .page__content
 body, .page, .page__content, .sidebar, .site-footer, .masthead, .masthead__menu-item, .author__name, .author__bio, .author__avatar, .author__content,
@@ -45,9 +44,30 @@ $color-link: var(--color-primary);
 
 // 8) Make homepage wider (only for layout: home, optional)
 .page, .page__content, .layout--home, .home-intro {
-  max-width: 2000px !important;  // (increase if needed)
+  max-width: 1500px !important;  // (increase if needed)
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: 32px !important;   // was 60px+
   padding-right: 32px !important;
+}
+
+
+.sidebar,
+.author__content {
+  filter: none !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+
+// 9) Even‑right‑edge text
+.page__content {
+  p,
+  li,
+  dd,
+  blockquote {
+    text-align: justify !important;     
+    text-justify: inter-word !important; 
+    hyphens: auto !important;           
+  }
 }
