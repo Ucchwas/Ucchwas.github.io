@@ -1,4 +1,18 @@
-_site
-.sass-cache
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
 .jekyll-metadata
+.sass-cache/
+
+# Local Ruby/Bundler setup (GitHub Pages installs its own gems)
+vendor/
+.bundle/
 Gemfile.lock
+
+# Working copies of documents in the repo root; published PDFs live in assets/pdfs/
+/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
