@@ -1,0 +1,32 @@
+{%- comment -%}
+  One project. Usage: {% include project.html project=p %}
+  Options: show_tags=true lists its tags; heading="h2" when the page has no section headings above it.
+{%- endcomment -%}
+{%- assign p = include.project -%}
+{%- assign heading = include.heading | default: "h3" -%}
+<li class="row">
+  <div class="when">{{ p.period }}{% if p.period and p.where %}<br>{% endif %}{% if p.where %}<span class="when-sub">{{ p.where }}</span>{% endif %}</div>
+  <div>
+    <{{ heading }} class="item-title">{{ p.name }}</{{ heading }}>
+    <p class="item-desc">{% include markdown-inline.html text=p.summary %}</p>
+    {%- if p.metric %}
+    {%- comment -%} Each " · "-separated clause wraps as a unit. {%- endcomment -%}
+    {%- assign parts = p.metric | split: " · " %}
+    <p class="metric"><span>{% for part in parts %}<span class="metric-part">{{ part }}{% if forloop.last %}</span>{% else %} ·</span> {% endif %}{% endfor %}</span></p>
+    {%- endif %}
+    {%- if p.links.size > 0 %}
+    <p class="links">
+      {%- for link in p.links %}
+      <a class="btn" href="{{ link.url }}">{{ link.label }}</a>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+    {%- if include.show_tags and p.tags.size > 0 %}
+    <p class="tags">
+      {%- for tag in p.tags %}
+      <span class="tag">{{ tag }}</span>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+  </div>
+</li>

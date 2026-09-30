@@ -1,0 +1,62 @@
+# Identity and links used by the header, home page, footer, and search-engine metadata.
+name: Ucchwas Talukder Utsha
+short_name: Ucchwas T. Utsha
+given_name: Ucchwas
+family_name: Utsha
+# Other spellings of the name. Publication authors matching `name` or any of these are bolded.
+alternate_names:
+  - Ucchwas T. Utsha
+  - U. T. Utsha
+  - Ucchwas Talukder
+
+role: Postdoctoral Scholar
+org: Stanford University
+department: Department of Radiation Oncology
+email: ucchwas09@gmail.com
+# Shown under the name on the home page.
+topics: [LLM reasoning, Graph learning, Foundation models, Biosignals, Edge ML]
+
+photo:
+  webp: /assets/img/profile-320.webp
+  jpg: /assets/img/profile-320.jpg
+  large: /assets/img/profile-640.jpg
+og_image: /assets/img/og-image.png
+# Replace this file to update the resume; the header, home page, and footer all link here.
+resume: /assets/pdfs/Ucchwas_Talukder.pdf
+
+# Profile links (home page and footer). `icon` is one of: mail, file, scholar, github, linkedin.
+links:
+  - label: Email
+    url: "mailto:ucchwas09@gmail.com"
+    icon: mail
+  - label: Resume
+    url: /assets/pdfs/Ucchwas_Talukder.pdf
+    icon: file
+  - label: Google Scholar
+    url: "https://scholar.google.com/citations?user=5d2l7uQAAAAJ&hl=en"
+    icon: scholar
+  - label: GitHub
+    url: "https://github.com/Ucchwas"
+    icon: github
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/ucchwas-talukder-utsha-98024518b/"
+    icon: linkedin
+
+# Profiles that identify the same person (used in structured data only).
+same_as:
+  - "https://scholar.google.com/citations?user=5d2l7uQAAAAJ"
+  - "https://github.com/Ucchwas"
+  - "https://www.linkedin.com/in/ucchwas-talukder-utsha-98024518b/"
+  - "https://orcid.org/0009-0004-1426-7678"
+  - "https://profiles.stanford.edu/ucchwas-talukder-utsha"
+
+knows_about:
+  - Large language models
+  - Graph machine learning
+  - Foundation models
+  - Biosignal processing
+  - Biomedical AI
+
+alumni_of:
+  - Texas Tech University
+  - Bangladesh University of Engineering and Technology

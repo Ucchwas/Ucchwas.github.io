@@ -1,13 +1,6 @@
-main:
-  - title: "Home"
-    url: "/"
-  - title: "About"
-    url: "/about/"
-  - title: "Research"
-    url: "/research/"
-  - title: "Publications"
-    url: "/publications/"
-  - title: "Projects"
-    url: "/projects/"
-  - title: "Achievements"
-    url: "/achievements/"
+# Header navigation. The site name links home, and a Resume link (from profile.yml `resume`) follows
+# these items.
+- title: Publications
+  url: /publications/
+- title: Projects
+  url: /projects/

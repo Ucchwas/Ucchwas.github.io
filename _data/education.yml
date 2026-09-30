@@ -1,0 +1,14 @@
+# Degrees, newest first. `details` supports Markdown.
+
+- degree: Ph.D. in Computer Science
+  school: Texas Tech University
+  year: "2026"
+  details: >-
+    Advised by Prof. Bashir I. Morshed. Dissertation:
+    [Real-Time Edge AI for Biosignal Analysis Using Deep Learning, NeuroSymbolic AI, and LLMs for
+    Cardiac Monitoring and Silent Speech Recognition](https://hdl.handle.net/2346/109517).
+    Supported by a Distinguished Graduate Student Assistantship.
+
+- degree: B.Sc. in Computer Science and Engineering
+  school: Bangladesh University of Engineering and Technology (BUET)
+  year: "2021"

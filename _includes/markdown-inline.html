@@ -1,0 +1,5 @@
+{%- comment -%}
+  One line of Markdown (links, emphasis) rendered without the wrapping <p>.
+  Usage: {% include markdown-inline.html text=item.text %}
+{%- endcomment -%}
+{{- include.text | markdownify | remove: "<p>" | remove: "</p>" | strip -}}

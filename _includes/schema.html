@@ -1,0 +1,32 @@
+{%- assign profile = site.data.profile -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateModified": {{ site.time | date_to_xmlschema | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "@id": {{ "/#person" | absolute_url | jsonify }},
+    "name": {{ profile.name | jsonify }},
+    "alternateName": {{ profile.alternate_names | jsonify }},
+    "givenName": {{ profile.given_name | jsonify }},
+    "familyName": {{ profile.family_name | jsonify }},
+    "jobTitle": {{ profile.role | jsonify }},
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": {{ profile.org | jsonify }},
+      "department": { "@type": "Organization", "name": {{ profile.department | jsonify }} }
+    },
+    "alumniOf": [
+      {%- for school in profile.alumni_of %}
+      { "@type": "CollegeOrUniversity", "name": {{ school | jsonify }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor %}
+    ],
+    "knowsAbout": {{ profile.knows_about | jsonify }},
+    "image": {{ profile.photo.large | absolute_url | jsonify }},
+    "url": {{ "/" | absolute_url | jsonify }},
+    "email": {{ profile.email | prepend: "mailto:" | jsonify }},
+    "sameAs": {{ profile.same_as | jsonify }}
+  }
+}
+</script>

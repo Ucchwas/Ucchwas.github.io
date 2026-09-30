@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p><span class="nowrap">© {{ site.time | date: "%Y" }} {{ site.data.profile.name }}</span> · <span class="nowrap">Updated {{ site.time | date: "%b %Y" }}</span></p>
+    <ul class="footer-links">
+      {%- for link in site.data.profile.links %}
+      <li><a href="{{ link.url | relative_url }}"{% if link.url contains "://" %} rel="me"{% endif %}>{{ link.label }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</footer>

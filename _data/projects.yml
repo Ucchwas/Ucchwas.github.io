@@ -1,0 +1,102 @@
+# Projects, most important first. `home: true` items also appear under "Selected work" on the home
+# page. `summary` supports Markdown. Metrics come from the linked paper, the repository README, or the
+# resume.
+
+- name: BioGlyph
+  period: "2026"
+  where: Stanford
+  home: true
+  summary: >-
+    A deterministic compiler that states a network's structure in words (named roles, the measurements
+    behind each one, and what removing a part would do) so that frozen LLMs can reason about complex
+    networks, from protein interactions to social and citation graphs.
+  metric: "70.6% accuracy vs 48.7% with edge-list prompts · 1,239 questions across eight networks"
+  tags: [LLMs, Graph reasoning, Benchmarking]
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2609.03229" }
+    - { label: Demo, url: "https://islamlab.org/bioglyph/" }
+
+- name: Graph-native large graph model
+  period: "2026"
+  where: Stanford
+  summary: >-
+    A graph-in, graph-out Transformer that reads adjacency, edge values, and node features directly (no
+    text serialization or tokenizer) and reconstructs or translates graphs with a bilinear decoder, using
+    relative random-walk probabilities (RRWP) as structural attention biases.
+  metric: "Adding RRWP on TCGA normal-to-tumor graph prediction: changed-edge AP 0.279 → 0.309, AUROC 0.703 → 0.731 · 11 held-out cancers"
+  tags: [PyTorch, Graph Transformers, GNNs]
+
+- name: Silent speech recognition from facial EMG
+  period: "2025–2026"
+  where: Texas Tech
+  home: true
+  summary: >-
+    A compact EMG adapter conditions a frozen decoder-only LLM (Llama&nbsp;3.2&nbsp;1B) under joint
+    autoregressive and CTC training. Across ten decoding strategies compared with bootstrap confidence
+    intervals, constraining CTC prefix search with a lexicon or grammar from the training transcripts
+    gives the best system; training without the LLM's autoregressive objective raises its WER to 31.1%.
+  metric: "Test WER 29.5% (greedy CTC) → 23.5% with constrained CTC prefix search · 50 held-out utterances"
+  tags: [PyTorch, Transformers, Constrained decoding]
+  links:
+    - { label: Code, url: "https://github.com/Ucchwas/Silent-Speech-EMG-NeuroSymbolic-LLM" }
+
+- name: CardioHelp
+  period: "2023–2025"
+  where: Texas Tech
+  home: true
+  summary: >-
+    A Bluetooth-connected Android app that analyzes streaming ECG beat by beat on the phone. A
+    GAN-augmented CNN-LSTM classifier runs on-device with TensorFlow Lite for real-time arrhythmia
+    detection.
+  metric: "98.44% MIT-BIH test accuracy · 1.69 MB model · 4.6 ms per beat on-device"
+  tags: [Android, TensorFlow Lite, Edge AI]
+  links:
+    - { label: Model paper, url: "https://doi.org/10.1016/j.smhl.2025.100601" }
+    - { label: App paper, url: "https://doi.org/10.1016/j.smhl.2024.100446" }
+    - { label: Code, url: "https://github.com/cpslabttu/Smart-Health-Application-V4" }
+
+- name: ReproPilot
+  period: "2025"
+  where: Personal
+  home: true
+  summary: >-
+    An AI research agent that turns a paper PDF into a runnable reproducibility scaffold (code skeleton,
+    configs, tests, and a report), with schema-validated tool calls, an allow-listed shell, and SQLite
+    tracing of every prompt, tool call, and decision.
+  tags: [Agents, OpenAI API, Pydantic, SQLite]
+  links:
+    - { label: Code, url: "https://github.com/Ucchwas/ReproPilot-AgenticReproLab" }
+
+- name: MedGemma Navigator
+  period: "2026"
+  where: Personal
+  home: true
+  summary: >-
+    A clinical navigation prototype that retrieves imaging through DICOMweb and patient context through
+    FHIR R4, then uses MedGemma-4B to write structured imaging summaries and pre-visit packets, saving a
+    traceable record of every run.
+  tags: [MedGemma, DICOMweb, FHIR R4, Gradio]
+  links:
+    - { label: Code, url: "https://github.com/Ucchwas/MedGemma-Navigator-DICOMweb-FHIR" }
+    - { label: Notebook, url: "https://www.kaggle.com/code/ucchwastalukder/medgemma-navigator-dicomweb-fhir" }
+
+- name: EMG Intent
+  period: "2026"
+  where: Personal
+  summary: >-
+    Session-level action-intent decoding from 16-channel wrist sEMG (emg2pose). Pose supervises training
+    only, through 24 pose-grounded action tokens and teacher distillation; inference is EMG-only.
+  tags: [PyTorch, sEMG, Distillation]
+  links:
+    - { label: Code, url: "https://github.com/Ucchwas/EMG_Intent" }
+
+- name: Defending ECG classifiers against boundary attacks
+  period: "2025"
+  where: Texas Tech
+  summary: >-
+    Black-box boundary attacks on a 1D-CNN arrhythmia classifier, with adversarial retraining and
+    low-pass filtering as defenses.
+  metric: "After adversarial retraining: 11.39% attack success on unseen adversarial signals, 94.57% clean accuracy"
+  tags: [TensorFlow, Adversarial ML]
+  links:
+    - { label: Paper, url: "https://doi.org/10.1109/SATC65530.2025.11136979" }

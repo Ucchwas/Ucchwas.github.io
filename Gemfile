@@ -1,17 +1,10 @@
 source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins
 
-group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-sitemap"
-  gem "jekyll-gist"
-  gem "jekyll-feed"
-  gem "jemoji"
-  gem "jekyll-include-cache"
-  gem "minimal-mistakes-jekyll"
-end
+# The exact gem set GitHub Pages uses to build this site.
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
-# Windows-specific gems
-platforms :mswin, :mingw, :x64_mingw do
+# Windows has no system zoneinfo database.
+platforms :mingw, :x64_mingw, :mswin do
+  gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
 end

@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ site.data.profile.short_name }}</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {%- for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+        <li><a href="{{ site.data.profile.resume | relative_url }}">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,67 @@
+# Research and industry experience, newest first. `highlights` support Markdown (one to three each).
+
+- role: Postdoctoral Scholar
+  org: Stanford University
+  url: "https://med.stanford.edu/radonc.html"
+  unit: Radiation Physics, Department of Radiation Oncology · Islam Lab
+  location: Palo Alto, CA
+  start: Aug 2026
+  end: Present
+  highlights:
+    - >-
+      Created [BioGlyph](https://arxiv.org/abs/2609.03229), a deterministic topology-to-language
+      compiler that lets frozen LLMs reason about complex networks, and a 1,239-question
+      graph-reasoning benchmark spanning seven reasoning families.
+    - >-
+      Developed masked-autoencoder ViT pretraining for proteomics foundation models, scaling to a
+      302M-parameter ViT-Large trained on 69K real proteomes from 1,067 studies plus 230M synthetic
+      profiles.
+    - >-
+      Served 4-bit Qwen3-8B behind FastAPI and vLLM on Google Cloud for multi-agent biomedical
+      workflows that combine graph analysis, subgraph retrieval, and LLM reasoning.
+
+- role: Graduate Research Assistant
+  org: Texas Tech University
+  url: "https://www.ttu.edu"
+  unit: Cyber Physical Systems Lab, Department of Computer Science
+  location: Lubbock, TX
+  start: Aug 2022
+  end: Jul 2026
+  highlights:
+    - >-
+      Built real-time biosignal AI end to end: CardioHelp, a Bluetooth LE Android app that runs
+      TensorFlow Lite models on the phone, and a facial-EMG silent speech recognizer that conditions a
+      frozen LLM.
+    - >-
+      Derived respiratory rate directly from ECG (MAE ≤ 0.36 breaths/min against a reference belt) and
+      ran apnea detection on-device at about 5&nbsp;ms per inference.
+    - >-
+      First author on 10 of 12 peer-reviewed papers, including two Smart Health journal articles and
+      papers at IEEE EMBC and IEEE BSN.
+
+- role: Software Engineer
+  org: Fiftytwo (Bording Group)
+  url: "https://www.fiftytwo.com"
+  unit: 52Retail point-of-sale platform
+  location: Dhaka, Bangladesh · Glostrup, Denmark
+  start: Aug 2021
+  end: Jun 2022
+  highlights:
+    - >-
+      Delivered POS features from requirements and technical design through release, improving
+      checkout throughput by about 15%.
+    - >-
+      Built C/C++ components and REST integrations connecting POS terminals, payment providers, and ERP
+      systems, with CI/CD and regression test coverage.
+
+- role: Software Engineer
+  org: Emerging IT Bangladesh
+  unit: Backend services
+  location: Dhaka, Bangladesh
+  start: Feb 2021
+  end: Jul 2021
+  highlights:
+    - >-
+      Implemented Java and Spring Boot services and REST APIs for Android apps, from endpoint design
+      through client integration.
+    - Traced production failures across API and Android request flows and fixed the underlying defects.

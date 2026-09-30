@@ -1,0 +1,46 @@
+{%- assign profile = site.data.profile -%}
+{%- if page.url == "/" -%}
+  {%- capture page_title -%}{{ profile.name }} · {{ profile.role }}, {{ profile.org }}{%- endcapture -%}
+{%- else -%}
+  {%- capture page_title -%}{{ page.title }} · {{ profile.name }}{%- endcapture -%}
+{%- endif -%}
+{%- assign page_description = page.description | default: site.description | normalize_whitespace | strip -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title | escape }}</title>
+<meta name="description" content="{{ page_description | escape }}">
+<meta name="author" content="{{ profile.name }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- else %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- endif %}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ profile.name }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ profile.og_image | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ profile.name }}, {{ profile.role }} at {{ profile.org }}">
+<meta property="og:locale" content="en_US">
+{%- if page.url == "/" %}
+<meta property="profile:first_name" content="{{ profile.given_name }}">
+<meta property="profile:last_name" content="{{ profile.family_name }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_description | escape }}">
+<meta name="twitter:image" content="{{ profile.og_image | absolute_url }}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<link rel="preload" href="{{ '/assets/fonts/ibm-plex-sans-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+{%- if page.url == "/" %}
+{% include schema.html %}
+{%- endif %}

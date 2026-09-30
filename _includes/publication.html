@@ -1,0 +1,36 @@
+{%- comment -%}
+  One publication. Usage: {% include publication.html pub=p %}
+  Add show_year=true to append the year to the venue line (used where entries are not grouped by year).
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign names = site.data.profile.alternate_names | push: site.data.profile.name -%}
+{%- capture venue_line -%}
+  {{- p.venue -}}
+  {%- if include.show_year and p.year -%}{%- if p.venue -%}, {% endif -%}{{- p.year -}}{%- endif -%}
+{%- endcapture -%}
+<li class="row">
+  <div class="when">{% if p.venue_short %}<span class="chip">{{ p.venue_short }}</span>{% endif %}</div>
+  <div>
+    <h3 class="item-title">
+      {%- if p.url -%}<a href="{{ p.url }}">{{ p.title }}</a>{%- else -%}{{ p.title }}{%- endif -%}
+    </h3>
+    <p class="pub-authors">
+      {%- for author in p.authors -%}
+        {%- if names contains author -%}<strong>{{ author }}</strong>{%- else -%}{{ author }}{%- endif -%}
+        {%- unless forloop.last %}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+    {%- if venue_line != "" %}
+    <p class="pub-venue">{{ venue_line }}</p>
+    {%- endif %}
+    {%- if p.status or p.note or p.links.size > 0 %}
+    <p class="pub-badges">
+      {%- if p.status %}<span class="chip chip-status">{{ p.status }}</span>{% endif -%}
+      {%- if p.note %}<span class="chip chip-note">{{ p.note }}</span>{% endif -%}
+      {%- for link in p.links %}
+      <a class="btn" href="{{ link.url }}">{{ link.label }}</a>
+      {%- endfor %}
+    </p>
+    {%- endif %}
+  </div>
+</li>

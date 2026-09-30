@@ -1,0 +1,16 @@
+# Skill groups, shown as plain lines at the bottom of the home page.
+
+- group: ML & LLMs
+  items: >-
+    PyTorch, TensorFlow, Hugging Face Transformers, ViTs, GNNs and graph Transformers, self-supervised
+    learning, masked autoencoders, LoRA and adapters, RAG and GraphRAG, multi-agent systems,
+    constrained decoding
+
+- group: Training & serving
+  items: >-
+    Mixed precision, gradient checkpointing, Slurm, vLLM, Google Cloud, Docker, TensorFlow Lite,
+    experiment tracking, ablations, bootstrap confidence intervals
+
+- group: Software
+  items: >-
+    Python, C/C++, Java, SQL, FastAPI, Spring Boot, REST APIs, Git, CI/CD

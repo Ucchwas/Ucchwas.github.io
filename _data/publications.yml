@@ -1,0 +1,155 @@
+# Publications, newest first. The publications page groups them by `year`.
+#   url       canonical page (DOI or arXiv); the title links here
+#   links     extra artifacts shown as small buttons (PDF, Code, Demo, ...)
+#   status    optional badge, e.g. "Under review", "In revision", "Accepted"
+#   note      optional short badge, e.g. "Oral"
+#   selected  true = also listed on the home page
+# Author names that match an alias in _data/profile.yml are bolded automatically.
+# When the EMBC 2026 proceedings appear in IEEE Xplore, add their DOIs as `url` and drop `status`.
+
+- title: Language-encoded network topology enables large language models to reason about complex networks
+  authors: [Ucchwas Talukder Utsha, Sakib Mostafa, James Zou, Md Tauhidul Islam]
+  venue: arXiv preprint arXiv:2609.03229
+  venue_short: arXiv
+  year: 2026
+  type: preprint
+  status: Under review
+  selected: true
+  url: "https://arxiv.org/abs/2609.03229"
+  links:
+    - { label: PDF, url: "https://arxiv.org/pdf/2609.03229" }
+    - { label: Demo, url: "https://islamlab.org/bioglyph/" }
+
+- title: Reducing Language-Prior Drift in EMG Silent Speech Recognition via NeuroSymbolic Constrained Decoding with Large Language Models
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: IEEE Transactions on Audio, Speech and Language Processing
+  venue_short: IEEE TASLP
+  year: 2026
+  type: journal
+  status: In revision
+  links:
+    - { label: Code, url: "https://github.com/Ucchwas/Silent-Speech-EMG-NeuroSymbolic-LLM" }
+
+- title: LLM-Conditioned Silent Speech Recognition from Facial EMG Using NeuroSymbolic Decoding
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), Toronto
+  venue_short: IEEE EMBC
+  year: 2026
+  type: conference
+  status: Accepted
+  selected: true
+  links:
+    - { label: Program, url: "https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=3627&SessionID=1119" }
+
+- title: Physiological Stress Monitoring with Chest-Worn ECG and Respiratory Sensing
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), Toronto
+  venue_short: IEEE EMBC
+  year: 2026
+  type: conference
+  status: Accepted
+  links:
+    - { label: Program, url: "https://cmsworkshops.com/EMBC2026/view_paper.php?PaperNum=4255&SessionID=1119" }
+
+- title: A Novel Real-Time Intelligent Axis Selection Based on Body Positions with Simultaneous Cardiac and Respiratory Signal Using an Edge Wearable for Smart Health Applications
+  authors: [Mahfuzur Rahman, Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: Electronics, vol. 15, no. 11, 2463
+  venue_short: Electronics
+  year: 2026
+  type: journal
+  url: "https://doi.org/10.3390/electronics15112463"
+
+- title: Real-Time Edge AI for Biosignal Analysis Using Deep Learning, NeuroSymbolic AI, and LLMs for Cardiac Monitoring and Silent Speech Recognition
+  authors: [Ucchwas Talukder Utsha]
+  venue: Ph.D. dissertation, Texas Tech University
+  venue_short: Dissertation
+  year: 2026
+  type: thesis
+  url: "https://hdl.handle.net/2346/109517"
+
+- title: GAN-enhanced hybrid deep learning model for real-time cardiac beat detection in the CardioHelp app with edge computing
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: Smart Health, vol. 38, 100601
+  venue_short: Smart Health
+  year: 2025
+  type: journal
+  selected: true
+  url: "https://doi.org/10.1016/j.smhl.2025.100601"
+
+- title: Smartphone-Based Real-Time Respiration Tracking with Dual-Sided Inkjet-Printed Wearable Electrodes
+  authors: [Ucchwas Talukder Utsha, Mahfuzur Rahman, Bashir I. Morshed]
+  venue: IEEE International Conference on Body Sensor Networks (BSN), Los Angeles
+  venue_short: IEEE BSN
+  year: 2025
+  type: conference
+  url: "https://doi.org/10.1109/BSN66969.2025.11337634"
+
+- title: Multi-Stage Real-Time Classification of Breathing Patterns Using ECG and Respiratory Signals
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: IEEE World AI IoT Congress (AIIoT), Seattle
+  venue_short: IEEE AIIoT
+  year: 2025
+  type: conference
+  url: "https://doi.org/10.1109/AIIoT65859.2025.11105227"
+
+- title: Securing AI-Driven ECG Classification with Robust Defense Against Boundary Attacks
+  authors: [Ucchwas Talukder Utsha, Tara Salman, Bashir I. Morshed]
+  venue: International Conference on Secure IoT, Assured and Trusted Computing (SATC), Dayton
+  venue_short: SATC
+  year: 2025
+  type: conference
+  url: "https://doi.org/10.1109/SATC65530.2025.11136979"
+
+- title: "CardioHelp: A smartphone application for beat-by-beat ECG signal analysis for real-time cardiac disease detection using edge-computing AI classifiers"
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: Smart Health, vol. 31, 100446
+  venue_short: Smart Health
+  year: 2024
+  type: journal
+  selected: true
+  url: "https://doi.org/10.1016/j.smhl.2024.100446"
+  links:
+    - { label: PDF, url: "https://par.nsf.gov/servlets/purl/10570158" }
+    - { label: Code, url: "https://github.com/cpslabttu/Smart-Health-Application-V4" }
+
+- title: Edge-Computing Enabled Real-Time Respiratory Monitoring and Breathing Pattern Detection
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: IEEE International Conference on Body Sensor Networks (BSN), Chicago
+  venue_short: IEEE BSN
+  year: 2024
+  type: conference
+  note: Oral
+  url: "https://doi.org/10.1109/BSN63547.2024.10780619"
+  links:
+    - { label: PDF, url: "https://par.nsf.gov/servlets/purl/10570161" }
+
+- title: Inkjet-printed Dry Flexible Electromyography Electrode Array for Classifying Finger Movements with AI Algorithms
+  authors: [Nabonita Mitra, Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: IEEE Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON)
+  venue_short: IEEE UEMCON
+  year: 2024
+  type: conference
+  url: "https://doi.org/10.1109/UEMCON62879.2024.10754750"
+  links:
+    - { label: PDF, url: "https://par.nsf.gov/servlets/purl/10570159" }
+
+- title: A Smart Health Application for Real-Time Cardiac Disease Detection and Diagnosis Using Machine Learning on ECG Data
+  authors: [Ucchwas Talukder Utsha, I Hua Tsai, Bashir I. Morshed]
+  venue: IFIP International Internet of Things Conference (IFIP-IoT), Springer
+  venue_short: IFIP-IoT
+  year: 2023
+  type: conference
+  url: "https://doi.org/10.1007/978-3-031-45878-1_10"
+  links:
+    - { label: PDF, url: "https://par.nsf.gov/servlets/purl/10483369" }
+
+- title: A Smartphone App for Real-time Heart Rate Computation from Streaming ECG/EKG data
+  authors: [Ucchwas Talukder Utsha, Bashir I. Morshed]
+  venue: IEEE International Conference on Electro Information Technology (eIT)
+  venue_short: IEEE eIT
+  year: 2023
+  type: conference
+  url: "https://doi.org/10.1109/eIT57321.2023.10187337"
+  links:
+    - { label: PDF, url: "https://par.nsf.gov/servlets/purl/10483376" }
+    - { label: Code, url: "https://github.com/cpslabttu/Smart-Health-Application-V4" }
