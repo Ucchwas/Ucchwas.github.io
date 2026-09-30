@@ -5,12 +5,17 @@ permalink: /404.html
 noindex: true
 sitemap: false
 ---
-<section class="not-found">
-  <h1 class="page-title">Page not found</h1>
-  <p class="page-lede">This page doesn’t exist or has moved.</p>
-  <p class="links">
-    <a class="btn" href="{{ '/' | relative_url }}">Home</a>
-    <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
-    <a class="btn" href="{{ '/projects/' | relative_url }}">Projects</a>
-  </p>
-</section>
+<div class="split">
+  <header class="split-side">
+    <h1 class="page-title">Page not found</h1>
+  </header>
+
+  <div class="split-main not-found">
+    <p class="page-lede">This page doesn’t exist or has moved.</p>
+    <p class="links">
+      <a class="btn" href="{{ '/' | relative_url }}">Home</a>
+      <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a class="btn" href="{{ '/projects/' | relative_url }}">Projects</a>
+    </p>
+  </div>
+</div>

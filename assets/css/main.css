@@ -1,21 +1,22 @@
 /* Ucchwas Talukder Utsha — site styles.
    Plain CSS (no front matter) so GitHub Pages copies it verbatim.
-   Type: IBM Plex Sans + IBM Plex Mono (SIL OFL, self-hosted in /assets/fonts). */
+   Type: Newsreader (headings), IBM Plex Sans (text), IBM Plex Mono (dates and labels).
+   All SIL OFL and self-hosted in /assets/fonts. */
 
 /* ---------- Fonts ---------- */
 
 @font-face {
-  font-family: "IBM Plex Sans";
-  src: url("../fonts/ibm-plex-sans-var.woff2") format("woff2");
+  font-family: "Newsreader";
+  src: url("../fonts/newsreader-var.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("../fonts/ibm-plex-sans-italic-var.woff2") format("woff2");
+  src: url("../fonts/ibm-plex-sans-var.woff2") format("woff2");
   font-weight: 400 700;
-  font-style: italic;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
@@ -33,6 +34,14 @@
   font-display: swap;
 }
 /* Metric-matched local fallbacks keep layout stable while the web fonts load. */
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Georgia");
+  size-adjust: 101.21%;
+  ascent-override: 72.62%;
+  descent-override: 26.18%;
+  line-gap-override: 0%;
+}
 @font-face {
   font-family: "Plex Sans Fallback";
   src: local("Arial"), local("Liberation Sans");
@@ -53,40 +62,31 @@
 /* ---------- Tokens ---------- */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
+  --font-serif: "Newsreader", "Newsreader Fallback", Georgia, serif;
   --font-sans: "IBM Plex Sans", "Plex Sans Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", "Plex Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* WCAG contrast on --bg: text 16.4, muted 7.8, faint 5.3, accent 7.2 (dark: 14.6, 8.9, 6.4, 9.0). */
+  /* WCAG contrast on white: text 16.4, muted 7.8, faint 5.3, accent 7.2. */
   --bg: #ffffff;
   --surface: #f5f7fa;
   --text: #1b2027;
   --muted: #4a5361;
   --faint: #636d7a;
-  --border: #dfe3e8;
+  --border: #e3e7ec;
   --accent: #1f55a8;
   --accent-hover: #173f7d;
   --accent-soft: #edf2fc;
 
-  --page: 47.5rem;
-  --measure: 38rem;
+  --page: 82rem;
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --side: 20rem;
+  --split-gap: clamp(3rem, 5.5vw, 6rem);
+  --measure: 40rem;
   --date-col: 9.5rem;
-  --col-gap: 2rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e1116;
-    --surface: #151a21;
-    --text: #dce3ea;
-    --muted: #a9b3bf;
-    --faint: #8d97a4;
-    --border: #262d37;
-    --accent: #8ab4f8;
-    --accent-hover: #b3cdfb;
-    --accent-soft: #12213a;
-  }
+  --col-gap: 1.75rem;
+  --thumb: 14rem;
 }
 
 /* ---------- Base ---------- */
@@ -179,13 +179,17 @@ b {
 }
 
 .wrap {
-  max-width: calc(var(--page) + 3rem);
+  max-width: calc(var(--page) + 2 * var(--pad));
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--pad);
 }
 
 main:focus {
   outline: none;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 /* ---------- Header ---------- */
@@ -215,7 +219,7 @@ main:focus {
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
+  gap: 0.25rem 1.75rem;
 }
 
 .site-nav a {
@@ -236,78 +240,178 @@ main:focus {
   text-underline-offset: 0.45em;
 }
 
-/* ---------- Page structure ---------- */
+/* ---------- Split layout ----------
+   Wide screens: a sticky side column (profile or page intro) beside the scrolling content. */
 
-.section {
-  margin-top: 3.5rem;
+.split-side {
+  margin-top: 0.5rem;
 }
 
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 0.875rem;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.split-main {
+  margin-top: 3rem;
+}
+
+@media (min-width: 64rem) {
+  .split {
+    display: grid;
+    grid-template-columns: var(--side) minmax(0, 1fr);
+    column-gap: var(--split-gap);
+    align-items: start;
+  }
+
+  .split-side,
+  .split-main {
+    margin-top: 1rem;
+  }
+}
+
+/* Only stick when the whole side column fits on screen. */
+@media (min-width: 64rem) and (min-height: 47rem) {
+  .split-side {
+    position: sticky;
+    top: 2.5rem;
+  }
+}
+
+/* ---------- Profile (home side column) ---------- */
+
+.profile-photo {
+  width: 100%;
+  max-width: 17rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px rgb(27 32 39 / 0.06), 0 12px 32px -18px rgb(27 32 39 / 0.45);
+}
+
+.profile-name {
+  margin-top: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2.375rem, 1.9rem + 1.3vw, 2.875rem);
+  font-weight: 560;
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+}
+
+.profile-role {
+  margin-top: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.profile-org {
+  display: block;
   color: var(--muted);
 }
 
-.section-title::after {
-  content: "";
-  flex: 1;
-  border-top: 1px solid var(--border);
-}
-
-.section-more {
-  margin-top: 1.25rem;
-  margin-left: calc(var(--date-col) + var(--col-gap));
+.profile-topics {
+  margin-top: 0.875rem;
   font-family: var(--font-mono);
   font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--faint);
 }
 
-.highlights {
-  margin-top: 0.375rem;
-  max-width: var(--measure);
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.125rem;
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
 }
 
-.highlights li {
-  position: relative;
-  padding-left: 1.125rem;
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.125rem 0;
 }
 
-.highlights li + li {
-  margin-top: 0.25rem;
+.icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
 }
 
-.highlights li::before {
-  content: "";
-  position: absolute;
-  left: 0.125rem;
-  top: 0.72em;
-  width: 0.375rem;
-  height: 1px;
-  background: var(--faint);
-}
-
-.page-header {
-  margin-top: 1rem;
-}
+/* ---------- Page intro (side column on inner pages) ---------- */
 
 .page-title {
-  font-size: clamp(2rem, 1.8rem + 0.8vw, 2.5rem);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: clamp(2.375rem, 1.9rem + 1.3vw, 2.875rem);
+  font-weight: 560;
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
 }
 
 .page-lede {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   max-width: var(--measure);
   color: var(--muted);
+}
+
+.page-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* ---------- Sections ---------- */
+
+.section + .section {
+  margin-top: 3.75rem;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 560;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.section-more {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+/* The About text reads as an introduction: a step larger, with a matching measure. */
+.lead {
+  max-width: 44rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.prose p + p {
+  margin-top: 1rem;
+}
+
+.item-desc a,
+.prose a {
+  overflow-wrap: anywhere;
 }
 
 /* Two-column rows: a mono date column and the content. */
@@ -322,20 +426,16 @@ main:focus {
   margin-top: 1.5rem;
 }
 
+.news .row + .row {
+  margin-top: 0.75rem;
+}
+
 .when {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   line-height: 1.9;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
-}
-
-.when-sub {
-  color: var(--faint);
-}
-
-.news .row + .row {
-  margin-top: 0.75rem;
 }
 
 .item-title {
@@ -366,14 +466,31 @@ main:focus {
   max-width: var(--measure);
 }
 
-.item-desc a,
-.prose a {
-  overflow-wrap: anywhere;
+.highlights {
+  margin-top: 0.375rem;
+  max-width: var(--measure);
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 1.125rem;
+}
+
+.highlights li + li {
+  margin-top: 0.25rem;
+}
+
+.highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0.125rem;
+  top: 0.8em;
+  width: 0.375rem;
+  height: 1px;
+  background: var(--faint);
 }
 
 /* Avoid one-word last lines where supported. */
-.hero-name,
-.page-title,
 .item-title {
   text-wrap: balance;
 }
@@ -388,84 +505,49 @@ main:focus {
   text-wrap: pretty;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Work / projects ---------- */
 
-.hero {
+.work {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2rem;
+  grid-template-columns: var(--thumb) minmax(0, 1fr);
+  column-gap: var(--col-gap);
   align-items: start;
-  margin-top: 1.5rem;
 }
 
-.hero-name {
-  font-size: clamp(2.25rem, 1.95rem + 1.1vw, 2.75rem);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.022em;
+.work + .work {
+  margin-top: 2.25rem;
 }
 
-.hero-role {
-  margin-top: 0.75rem;
-  color: var(--muted);
+.work-text {
+  grid-template-columns: minmax(0, 1fr);
 }
 
-.hero-topics {
-  margin-top: 0.375rem;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  line-height: 1.6;
-  color: var(--faint);
-}
-
-.hero-bio {
-  margin-top: 1.25rem;
-}
-
-.hero-photo-wrap {
+.thumb {
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px var(--border);
+  overflow: hidden;
 }
 
-.hero-photo {
-  width: 7.5rem;
-  height: 7.5rem;
-  border-radius: 50%;
+.thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   background: var(--surface);
-  box-shadow: 0 0 0 1px var(--border);
 }
 
-.profile-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-top: 1.25rem;
+a.thumb:hover {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.work-when {
+  margin-top: 0.125rem;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
 }
-
-.profile-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.125rem 0;
-}
-
-.icon {
-  width: 1em;
-  height: 1em;
-  flex: none;
-}
-
-.prose {
-  max-width: var(--measure);
-}
-
-.prose p + p {
-  margin-top: 1rem;
-}
-
-/* ---------- Work / projects ---------- */
 
 .metric {
   display: flex;
@@ -495,16 +577,12 @@ main:focus {
   text-wrap: balance;
 }
 
-.nowrap {
-  white-space: nowrap;
-}
-
 .tags,
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.625rem;
+  margin-top: 0.75rem;
 }
 
 .tag {
@@ -620,8 +698,8 @@ main:focus {
   content: "";
   position: absolute;
   top: 0;
-  left: 1.5rem;
-  right: 1.5rem;
+  left: var(--pad);
+  right: var(--pad);
   border-top: 1px solid var(--border);
 }
 
@@ -643,18 +721,37 @@ main:focus {
 
 /* ---------- Not found ---------- */
 
-.not-found {
-  margin-top: 3rem;
-  max-width: var(--measure);
+.not-found .page-lede {
+  margin-top: 0;
 }
 
 .not-found .links {
   margin-top: 1.5rem;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Medium screens: side column becomes a header block ---------- */
 
-@media (max-width: 40rem) {
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .profile {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    column-gap: 2.25rem;
+    align-items: center;
+  }
+
+  .profile-photo {
+    grid-row: span 5;
+    align-self: start;
+  }
+
+  .profile-name {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 39.999rem) {
   body {
     font-size: 1rem;
   }
@@ -664,27 +761,22 @@ main:focus {
     padding-bottom: 1.25rem;
   }
 
-  .hero {
+  .profile-photo {
+    max-width: 9.5rem;
+    border-radius: 12px;
+  }
+
+  .profile-name {
+    margin-top: 1.25rem;
+  }
+
+  .split-main {
+    margin-top: 2.5rem;
+  }
+
+  .row,
+  .work {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
-    margin-top: 0.5rem;
-  }
-
-  .hero-photo-wrap {
-    order: -1;
-  }
-
-  .hero-photo {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
-
-  .row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .section-more {
-    margin-left: 0;
   }
 
   .when {
@@ -692,16 +784,29 @@ main:focus {
     margin-bottom: 0.125rem;
   }
 
-  .section {
+  .work .thumb {
+    margin-bottom: 0.875rem;
+  }
+
+  .section + .section {
     margin-top: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.0625rem;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a,
-  .btn {
+  .btn,
+  .thumb {
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease,
-      text-decoration-color 0.15s ease;
+      text-decoration-color 0.15s ease, box-shadow 0.15s ease;
   }
 }
 
@@ -709,7 +814,6 @@ main:focus {
 
 @media print {
   :root {
-    --bg: #ffffff;
     --surface: #ffffff;
     --text: #000000;
     --muted: #333333;
@@ -727,8 +831,17 @@ main:focus {
   .skip-link,
   .site-nav,
   .site-footer,
-  .hero-photo {
+  .profile-photo,
+  .thumb {
     display: none;
+  }
+
+  .split-side {
+    position: static;
+  }
+
+  .work {
+    display: block;
   }
 
   a {
@@ -736,12 +849,12 @@ main:focus {
   }
 
   .row,
-  .pub-list > li,
-  .work-list > li {
+  .work,
+  .pub-list > li {
     break-inside: avoid;
   }
 
-  .section-title {
+  .section-head {
     break-after: avoid;
   }
 }

@@ -1,8 +1,9 @@
 # Projects, most important first. `home: true` items also appear under "Selected work" on the home
 # page. `summary` supports Markdown. Metrics come from the linked paper, the repository README, or the
-# resume.
+# resume. `image` is a 16:10 illustration (480 x 300 SVG) in assets/img/projects/.
 
 - name: BioGlyph
+  image: /assets/img/projects/bioglyph.svg
   period: "2026"
   where: Stanford
   home: true
@@ -17,6 +18,7 @@
     - { label: Demo, url: "https://islamlab.org/bioglyph/" }
 
 - name: Graph-native large graph model
+  image: /assets/img/projects/graph-model.svg
   period: "2026"
   where: Stanford
   summary: >-
@@ -27,6 +29,7 @@
   tags: [PyTorch, Graph Transformers, GNNs]
 
 - name: Silent speech recognition from facial EMG
+  image: /assets/img/projects/silent-speech.svg
   period: "2025–2026"
   where: Texas Tech
   home: true
@@ -41,6 +44,7 @@
     - { label: Code, url: "https://github.com/Ucchwas/Silent-Speech-EMG-NeuroSymbolic-LLM" }
 
 - name: CardioHelp
+  image: /assets/img/projects/cardiohelp.svg
   period: "2023–2025"
   where: Texas Tech
   home: true
@@ -56,6 +60,7 @@
     - { label: Code, url: "https://github.com/cpslabttu/Smart-Health-Application-V4" }
 
 - name: ReproPilot
+  image: /assets/img/projects/repropilot.svg
   period: "2025"
   where: Personal
   home: true
@@ -68,6 +73,7 @@
     - { label: Code, url: "https://github.com/Ucchwas/ReproPilot-AgenticReproLab" }
 
 - name: MedGemma Navigator
+  image: /assets/img/projects/medgemma-navigator.svg
   period: "2026"
   where: Personal
   home: true
@@ -81,6 +87,7 @@
     - { label: Notebook, url: "https://www.kaggle.com/code/ucchwastalukder/medgemma-navigator-dicomweb-fhir" }
 
 - name: EMG Intent
+  image: /assets/img/projects/emg-intent.svg
   period: "2026"
   where: Personal
   summary: >-
@@ -91,6 +98,7 @@
     - { label: Code, url: "https://github.com/Ucchwas/EMG_Intent" }
 
 - name: Defending ECG classifiers against boundary attacks
+  image: /assets/img/projects/boundary-attack.svg
   period: "2025"
   where: Texas Tech
   summary: >-

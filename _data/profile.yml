@@ -16,11 +16,9 @@ email: ucchwas09@gmail.com
 # Shown under the name on the home page.
 topics: [LLM reasoning, Graph learning, Foundation models, Biosignals, Edge ML]
 
-photo:
-  webp: /assets/img/profile-320.webp
-  jpg: /assets/img/profile-320.jpg
-  large: /assets/img/profile-640.jpg
-og_image: /assets/img/og-image.png
+# 4:5 portrait, 560 x 700 px. og-image.jpg is the 1200 x 630 link-preview card.
+photo: /assets/img/profile.jpg
+og_image: /assets/img/og-image.jpg
 # Replace this file to update the resume; the header, home page, and footer all link here.
 resume: /assets/pdfs/Ucchwas_Talukder.pdf
 

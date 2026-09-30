@@ -1,13 +1,25 @@
 {%- comment -%}
   One project. Usage: {% include project.html project=p %}
   Options: show_tags=true lists its tags; heading="h2" when the page has no section headings above it.
+  The illustration (`image`) links to the project's first link; the title and buttons carry the same
+  links, so the image link is hidden from assistive technology and the tab order.
 {%- endcomment -%}
 {%- assign p = include.project -%}
 {%- assign heading = include.heading | default: "h3" -%}
-<li class="row">
-  <div class="when">{{ p.period }}{% if p.period and p.where %}<br>{% endif %}{% if p.where %}<span class="when-sub">{{ p.where }}</span>{% endif %}</div>
+{%- assign primary = p.links | first -%}
+<li class="work{% unless p.image %} work-text{% endunless %}">
+  {%- if p.image %}
+  {%- if primary %}
+  <a class="thumb" href="{{ primary.url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.image | relative_url }}" width="480" height="300" alt="" loading="lazy" decoding="async"></a>
+  {%- else %}
+  <div class="thumb"><img src="{{ p.image | relative_url }}" width="480" height="300" alt="" loading="lazy" decoding="async"></div>
+  {%- endif %}
+  {%- endif %}
   <div>
     <{{ heading }} class="item-title">{{ p.name }}</{{ heading }}>
+    {%- if p.period or p.where %}
+    <p class="work-when">{{ p.period }}{% if p.period and p.where %} · {% endif %}{{ p.where }}</p>
+    {%- endif %}
     <p class="item-desc">{% include markdown-inline.html text=p.summary %}</p>
     {%- if p.metric %}
     {%- comment -%} Each " · "-separated clause wraps as a unit. {%- endcomment -%}

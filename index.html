@@ -7,125 +7,136 @@ redirect_from:
   - /achievements/
 ---
 {%- assign profile = site.data.profile -%}
-<section class="hero" aria-labelledby="intro">
-  <div>
-    <h1 class="hero-name" id="intro">{{ profile.name }}</h1>
-    <p class="hero-role"><span class="nowrap">{{ profile.role }}</span> · <span class="nowrap">{{ profile.org }}</span></p>
+<div class="split">
+  <header class="split-side profile">
+    <img class="profile-photo" src="{{ profile.photo | relative_url }}" width="560" height="700" alt="Portrait of {{ profile.name }}" fetchpriority="high">
+    <h1 class="profile-name">{{ profile.name }}</h1>
+    <p class="profile-role">{{ profile.role }}<span class="profile-org">{{ profile.org }}</span></p>
     {%- if profile.topics %}
-    <p class="hero-topics">{% for topic in profile.topics %}<span class="nowrap">{{ topic }}</span>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+    <p class="profile-topics">{% for topic in profile.topics %}<span class="nowrap">{{ topic }}{% if forloop.last %}</span>{% else %} ·</span> {% endif %}{% endfor %}</p>
     {%- endif %}
-    <div class="prose hero-bio">
-      <p>
-        I’m a Postdoctoral Scholar in Stanford University’s Department of Radiation Oncology, where I work on machine learning for biomedicine. 
-        My research focuses on foundation models, graph learning, multimodal biomedical data, and AI systems that can reason over 
-        complex scientific information. My goal is to build scalable, reliable ML methods that move beyond benchmarks and c
-        an support real-world scientific and clinical applications.
-      </p>
-      <p>
-        I received my Ph.D. in Computer Science from Texas Tech University and built real-time
-        biosignal AI, from on-device arrhythmia detection to LLM-conditioned silent speech recognition.
-        Before that, I earned a B.Sc. in Computer Science and Engineering from BUET and was a software
-        engineer at Fiftytwo (Bording Group), writing C/C++ for a retail point-of-sale platform. Outside of
-        work, I play cricket and soccer.
-      </p>
-    </div>
     <ul class="profile-links">
       {%- for link in profile.links %}
       <li><a href="{{ link.url | relative_url }}"{% if link.url contains "://" %} rel="me"{% endif %}>{% include icon.html name=link.icon %}<span>{{ link.label }}</span></a></li>
       {%- endfor %}
     </ul>
+  </header>
+
+  <div class="split-main">
+    <section class="section" aria-labelledby="about">
+      <div class="section-head"><h2 class="section-title" id="about">About</h2></div>
+      <div class="prose lead">
+        <p>
+          I’m a Postdoctoral Scholar in Stanford University’s Department of Radiation Oncology, where I work
+          on machine learning for biomedicine. My research focuses on foundation models, graph learning,
+          multimodal biomedical data, and AI systems that can reason over complex scientific information. My
+          goal is to build scalable, reliable ML methods that move beyond benchmarks and can support
+          real-world scientific and clinical applications.
+        </p>
+        <p>
+          I received my Ph.D. in Computer Science from Texas Tech University, where I worked on real-time
+          biosignal AI, from on-device arrhythmia detection to LLM-conditioned silent speech recognition.
+          Before that, I earned my B.Sc. in Computer Science and Engineering from BUET and worked as a
+          software engineer at Fiftytwo (Bording Group), building C/C++ systems for retail point-of-sale
+          platforms. Outside of work, I love playing cricket and soccer. I’m a left-handed batsman and a
+          right-arm medium-fast bowler, and I enjoy competing in local leagues and tournaments.
+        </p>
+      </div>
+    </section>
+
+    <section class="section news" aria-labelledby="news">
+      <div class="section-head"><h2 class="section-title" id="news">News</h2></div>
+      <ul>
+        {%- for item in site.data.news limit: 5 %}
+        <li class="row">
+          <div class="when">{{ item.date }}</div>
+          <p>{% include markdown-inline.html text=item.text %}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="work">
+      <div class="section-head">
+        <h2 class="section-title" id="work">Selected work</h2>
+        <a class="section-more" href="{{ '/projects/' | relative_url }}">All projects</a>
+      </div>
+      <ul>
+        {%- assign home_projects = site.data.projects | where: "home", true %}
+        {%- for project in home_projects %}
+        {% include project.html project=project %}
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="experience">
+      <div class="section-head">
+        <h2 class="section-title" id="experience">Experience</h2>
+        <a class="section-more" href="{{ profile.resume | relative_url }}">Resume (PDF)</a>
+      </div>
+      <ul>
+        {%- for job in site.data.experience %}
+        <li class="row">
+          <div class="when">{{ job.start }}{% if job.end %} – {{ job.end }}{% endif %}</div>
+          <div>
+            <h3 class="item-title">{{ job.role }}, {% if job.url %}<a href="{{ job.url }}">{{ job.org }}</a>{% else %}{{ job.org }}{% endif %}</h3>
+            {%- capture job_meta -%}{{ job.unit }}{% if job.unit and job.location %} · {% endif %}{{ job.location }}{%- endcapture -%}
+            {%- if job_meta != "" %}
+            <p class="item-meta">{{ job_meta }}</p>
+            {%- endif %}
+            {%- if job.highlights.size > 0 %}
+            <ul class="highlights">
+              {%- for point in job.highlights %}
+              <li>{% include markdown-inline.html text=point %}</li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="publications">
+      <div class="section-head">
+        <h2 class="section-title" id="publications">Selected publications</h2>
+        <a class="section-more" href="{{ '/publications/' | relative_url }}">All publications</a>
+      </div>
+      <ol class="pub-list">
+        {%- assign selected_pubs = site.data.publications | where: "selected", true %}
+        {%- for pub in selected_pubs %}
+        {% include publication.html pub=pub show_year=true %}
+        {%- endfor %}
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="education">
+      <div class="section-head"><h2 class="section-title" id="education">Education</h2></div>
+      <ul>
+        {%- for degree in site.data.education %}
+        <li class="row">
+          <div class="when">{{ degree.year }}</div>
+          <div>
+            <h3 class="item-title">{{ degree.degree }}, {{ degree.school }}</h3>
+            {%- if degree.details %}
+            <p class="item-meta item-desc">{% include markdown-inline.html text=degree.details %}</p>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="skills">
+      <div class="section-head"><h2 class="section-title" id="skills">Skills</h2></div>
+      <dl class="skills">
+        {%- for skill in site.data.skills %}
+        <div class="row">
+          <dt class="when">{{ skill.group }}</dt>
+          <dd>{{ skill.items }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </section>
   </div>
-  <picture class="hero-photo-wrap">
-    <source srcset="{{ profile.photo.webp | relative_url }}" type="image/webp">
-    <img class="hero-photo" src="{{ profile.photo.jpg | relative_url }}" width="320" height="320" alt="Portrait of {{ profile.name }}" fetchpriority="high">
-  </picture>
-</section>
-
-<section class="section news" aria-labelledby="news">
-  <h2 class="section-title" id="news">News</h2>
-  <ul>
-    {%- for item in site.data.news limit: 5 %}
-    <li class="row">
-      <div class="when">{{ item.date }}</div>
-      <p>{% include markdown-inline.html text=item.text %}</p>
-    </li>
-    {%- endfor %}
-  </ul>
-</section>
-
-<section class="section" aria-labelledby="work">
-  <h2 class="section-title" id="work">Selected work</h2>
-  <ul class="work-list">
-    {%- assign home_projects = site.data.projects | where: "home", true %}
-    {%- for project in home_projects %}
-    {% include project.html project=project %}
-    {%- endfor %}
-  </ul>
-  <p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects</a></p>
-</section>
-
-<section class="section" aria-labelledby="experience">
-  <h2 class="section-title" id="experience">Experience</h2>
-  <ul>
-    {%- for job in site.data.experience %}
-    <li class="row">
-      <div class="when">{{ job.start }}{% if job.end %} – {{ job.end }}{% endif %}</div>
-      <div>
-        <h3 class="item-title">{{ job.role }}, {% if job.url %}<a href="{{ job.url }}">{{ job.org }}</a>{% else %}{{ job.org }}{% endif %}</h3>
-        {%- capture job_meta -%}{{ job.unit }}{% if job.unit and job.location %} · {% endif %}{{ job.location }}{%- endcapture -%}
-        {%- if job_meta != "" %}
-        <p class="item-meta">{{ job_meta }}</p>
-        {%- endif %}
-        {%- if job.highlights.size > 0 %}
-        <ul class="highlights">
-          {%- for point in job.highlights %}
-          <li>{% include markdown-inline.html text=point %}</li>
-          {%- endfor %}
-        </ul>
-        {%- endif %}
-      </div>
-    </li>
-    {%- endfor %}
-  </ul>
-  <p class="section-more"><a href="{{ profile.resume | relative_url }}">Resume (PDF)</a></p>
-</section>
-
-<section class="section" aria-labelledby="publications">
-  <h2 class="section-title" id="publications">Selected publications</h2>
-  <ol class="pub-list">
-    {%- assign selected_pubs = site.data.publications | where: "selected", true %}
-    {%- for pub in selected_pubs %}
-    {% include publication.html pub=pub show_year=true %}
-    {%- endfor %}
-  </ol>
-  <p class="section-more"><a href="{{ '/publications/' | relative_url }}">All publications</a></p>
-</section>
-
-<section class="section" aria-labelledby="education">
-  <h2 class="section-title" id="education">Education</h2>
-  <ul>
-    {%- for degree in site.data.education %}
-    <li class="row">
-      <div class="when">{{ degree.year }}</div>
-      <div>
-        <h3 class="item-title">{{ degree.degree }}, {{ degree.school }}</h3>
-        {%- if degree.details %}
-        <p class="item-meta item-desc">{% include markdown-inline.html text=degree.details %}</p>
-        {%- endif %}
-      </div>
-    </li>
-    {%- endfor %}
-  </ul>
-</section>
-
-<section class="section" aria-labelledby="skills">
-  <h2 class="section-title" id="skills">Skills</h2>
-  <dl class="skills">
-    {%- for skill in site.data.skills %}
-    <div class="row">
-      <dt class="when">{{ skill.group }}</dt>
-      <dd>{{ skill.items }}</dd>
-    </div>
-    {%- endfor %}
-  </dl>
-</section>
+</div>

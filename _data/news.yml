@@ -2,7 +2,7 @@
 
 - date: Sep 2026
   text: >-
-    New preprint: [BioGlyph](https://arxiv.org/abs/2609.03229) compiles network topology into language
+    Preprint: [BioGlyph](https://arxiv.org/abs/2609.03229) compiles network topology into language
     so that frozen LLMs can reason about complex networks. Try the
     [interactive demo](https://islamlab.org/bioglyph/).
 
@@ -13,18 +13,12 @@
 
 - date: Aug 2026
   text: >-
-    Completed my Ph.D. in Computer Science at Texas Tech University
-    ([dissertation](https://hdl.handle.net/2346/109517)).
+    Completed my Ph.D. in Computer Science at Texas Tech University.
 
 - date: Jul 2026
   text: >-
     Two papers at IEEE EMBC 2026 in Toronto: LLM-conditioned silent speech recognition from facial EMG,
     and physiological stress monitoring with chest-worn ECG and respiratory sensing.
-
-- date: Jun 2026
-  text: >-
-    Co-authored a paper in [Electronics](https://doi.org/10.3390/electronics15112463) on
-    body-position-aware cardiorespiratory sensing with an edge wearable.
 
 - date: Nov 2025
   text: >-

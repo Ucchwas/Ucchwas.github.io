@@ -7,20 +7,29 @@ description: >-
   from EMG, and on-device biosignal AI.
 ---
 {%- assign scholar = site.data.profile.links | where: "icon", "scholar" | first -%}
-<header class="page-header">
-  <h1 class="page-title">Publications</h1>
-  <p class="page-lede">Papers, preprints, and my Ph.D. dissertation, grouped by year.
-    {%- if scholar %} Also on <a href="{{ scholar.url }}" rel="me">Google Scholar</a>.{% endif %}</p>
-</header>
+{%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse -%}
+<div class="split">
+  <header class="split-side">
+    <h1 class="page-title">Publications</h1>
+    <p class="page-lede">Papers, preprints, and my Ph.D. dissertation, grouped by year.
+      {%- if scholar %} Also on <a href="{{ scholar.url }}" rel="me">Google Scholar</a>.{% endif %}</p>
+    <nav class="page-index" aria-label="Years">
+      {%- for year in years %}
+      <a href="#y{{ year.name }}">{{ year.name }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
 
-{%- assign years = site.data.publications | group_by: "year" | sort: "name" | reverse %}
-{%- for year in years %}
-<section class="section" aria-labelledby="y{{ year.name }}">
-  <h2 class="section-title" id="y{{ year.name }}">{{ year.name }}</h2>
-  <ol class="pub-list">
-    {%- for pub in year.items %}
-    {% include publication.html pub=pub %}
+  <div class="split-main">
+    {%- for year in years %}
+    <section class="section" aria-labelledby="y{{ year.name }}">
+      <div class="section-head"><h2 class="section-title" id="y{{ year.name }}">{{ year.name }}</h2></div>
+      <ol class="pub-list">
+        {%- for pub in year.items %}
+        {% include publication.html pub=pub %}
+        {%- endfor %}
+      </ol>
+    </section>
     {%- endfor %}
-  </ol>
-</section>
-{%- endfor %}
+  </div>
+</div>

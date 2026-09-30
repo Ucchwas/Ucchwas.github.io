@@ -7,16 +7,18 @@ description: >-
   silent speech from EMG, on-device cardiac AI, and research agents.
 ---
 {%- assign github = site.data.profile.links | where: "icon", "github" | first -%}
-<header class="page-header">
-  <h1 class="page-title">Projects</h1>
-  <p class="page-lede">Research systems and engineering projects.
-    {%- if github %} More code is on <a href="{{ github.url }}" rel="me">GitHub</a>.{% endif %}</p>
-</header>
+<div class="split">
+  <header class="split-side">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-lede">Research systems and engineering projects.
+      {%- if github %} More code is on <a href="{{ github.url }}" rel="me">GitHub</a>.{% endif %}</p>
+  </header>
 
-<section class="section" aria-label="Projects">
-  <ul class="work-list">
-    {%- for project in site.data.projects %}
-    {% include project.html project=project show_tags=true heading="h2" %}
-    {%- endfor %}
-  </ul>
-</section>
+  <div class="split-main">
+    <ul>
+      {%- for project in site.data.projects %}
+      {% include project.html project=project show_tags=true heading="h2" %}
+      {%- endfor %}
+    </ul>
+  </div>
+</div>

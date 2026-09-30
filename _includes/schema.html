@@ -23,7 +23,7 @@
       {%- endfor %}
     ],
     "knowsAbout": {{ profile.knows_about | jsonify }},
-    "image": {{ profile.photo.large | absolute_url | jsonify }},
+    "image": {{ profile.photo | absolute_url | jsonify }},
     "url": {{ "/" | absolute_url | jsonify }},
     "email": {{ profile.email | prepend: "mailto:" | jsonify }},
     "sameAs": {{ profile.same_as | jsonify }}
